@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>404 Page with Flickering Light Text Effect - DEMO - wannabedev.io</title>
+		<meta name="description" content="A tutorial on how to quickly create a creative 404 error page template with a flickering light text effect using SVG and GSAP." />
+		<meta name="keywords" content="fullscreen, animation, svg, javascript, gsap, 404, error, hero" />
+		<meta name="author" content="Mirza Hodzic" />
+		<link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="assets/css/demo.css" />
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SJR1BPWFF0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-SJR1BPWFF0', {
+        page_path: window.location.pathname,
+      });
+    </script>
+
+  </head>
+  <body>
+    
+    <!-- demo START -->
+
+      <!-- demo:header START -->
+      <header>
+        <div class="logo">
+          <a href="#">LIGHTS</a>
+        </div>
+        <nav>
+          <li><a href="https://wannabedev.io"><span>Home</span></a></li>
+          <li><a href="https://wannabedev.io/tutorials/404-page-with-flickering-light-text-effect"><span>Back to Article</span></a></li>
+        </nav>
+      </header>
+      <!-- demo:header END -->
+    
+      <!-- demo:main START -->
+      <section class="error-demo" style="background-image: url(assets/img/bcg.jpg);">
+        <div class="content">
+          
+          <div class="description">
+            <h1>Oops,<br>something's<br>gone wrong</h1>
+            <p>Not to worry, why don't you try<br>one of these helpful links:</p>
+            <div class="links">
+              <a href="https://wannabedev.io">Homepage</a>
+              <a href="https://wannabedev.io/about">About us</a>
+            </div>
+          </div>
+
+          <div class="error">
+            <svg version="1.1" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+              
+              <defs>
+                <filter id="gemma">
+                  <feMorphology operator="dilate" radius="0" in="SourceAlpha" result="BEVEL_10" />
+                  <feOffset dx="0.5" dy="-1.5" in="BEVEL_10" result="BEVEL_20"/>
+                  <feComposite operator="out" in="BEVEL_10" in2="SourceGraphic" result="BEVEL_30"/>
+                  <feFlood flood-color="#333333" result="COLOR-glow" />
+                  <feComposite in="COLOR-glow" in2="BEVEL_30" operator="in" result="BEVEL_40" />
+                  <feMerge result="BEVEL_50">
+                    <feMergeNode in="BEVEL_40" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+
+                <filter id="gemma-glow">
+                  <feMorphology operator="dilate" radius="0" in="SourceAlpha" result="BEVEL_10" />
+                  <feOffset dx="0.5" dy="-1.5" in="BEVEL_10" result="BEVEL_20"/>
+                  <feComposite operator="out" in="BEVEL_10" in2="SourceGraphic" result="BEVEL_30"/>
+                  <feFlood flood-color="#F62459" result="COLOR-glow" />
+                  <feComposite in="COLOR-glow" in2="BEVEL_30" operator="in" result="BEVEL_40" />
+                  <feMerge result="BEVEL_50">
+                    <feMergeNode in="BEVEL_40" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+          
+              <g class="filtered">
+                <text x="52" y="72" font-family="Neoneon" text-anchor="middle" class="glow">404</text>
+              </g>
+          
+            </svg>
+
+            <span class="error-message">Page not found</span>
+          </div>
+        </div>
+      </section>   
+      <!-- demo:main START -->
+
+    <!-- demo END -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/EasePack.min.js"></script>
+    <script src="assets/js/gsapClassNames.js"></script>
+    <script src="assets/js/demo.js"></script>
+
+  </body>
+</html>
